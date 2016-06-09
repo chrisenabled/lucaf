@@ -1,0 +1,36 @@
+{
+  "name": "Photo",
+  "plural": "Photos",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": false
+    },
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "imageThumbnail": {
+      "type": "string",
+      "required": true
+    },
+    "dateCreated": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
