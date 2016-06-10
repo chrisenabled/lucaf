@@ -49,5 +49,15 @@
     "public": true,
     "$promise": {},
     "$resolved": true
+  },
+  "Email": {
+    "dataSource": "emailDs"
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   }
 }
