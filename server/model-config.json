@@ -31,5 +31,33 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Work": {
+    "dataSource": "db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Project": {
+    "dataSource": "db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Photo": {
+    "dataSource": "db",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "Email": {
+    "dataSource": "emailDs"
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   }
 }
