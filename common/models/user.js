@@ -16,7 +16,7 @@ module.exports = function(user) {
       to: user.email,
       from: 'noreply@loopback.com',
       subject: 'Thanks for registering.',
-      template: path.resolve(__dirname, '../../server/views/verify.ejs'),
+      template: path.resolve(__dirname, '../../server/views/verify.jade'),
       redirect: '/verified',
       user: user
     };
