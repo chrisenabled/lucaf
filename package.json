@@ -8,6 +8,7 @@
     "posttest": "nsp check"
   },
   "dependencies": {
+    "jade": "*",
     "body-parser": "^1.10.0",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
