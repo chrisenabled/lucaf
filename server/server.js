@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var app = module.exports = loopback();
 
 // configure view handler
-app.set('view engine', 'ejs');
+app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'views'));
 
 // configure body parser

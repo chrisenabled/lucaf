@@ -3,6 +3,17 @@
     "name": "db",
     "connector": "memory"
   },
+  "lucafPostgres": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "postgres://postgres:@localhost/lucaf",
+    "database": "lucaf",
+    "password": "",
+    "name": "lucafPostgres",
+    "user": "postgres",
+    "debug": true,
+    "connector": "postgresql"
+  },
   "emailDs": {
     "name": "emailDs",
     "connector": "mail",
