@@ -14,38 +14,38 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "lucafPostgres"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "lucafPostgres",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "lucafPostgres",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "lucafPostgres",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "lucafPostgres",
     "public": false
   },
   "Work": {
-    "dataSource": "db",
+    "dataSource": "lucafPostgres",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "Project": {
-    "dataSource": "db",
+    "dataSource": "lucafPostgres",
     "public": true,
     "$promise": {},
     "$resolved": true
   },
   "Photo": {
-    "dataSource": "db",
+    "dataSource": "lucafPostgres",
     "public": true,
     "$promise": {},
     "$resolved": true
@@ -53,8 +53,8 @@
   "Email": {
     "dataSource": "emailDs"
   },
-  "user": {
-    "dataSource": "db",
+  "AdminUser": {
+    "dataSource": "lucafPostgres",
     "public": true,
     "options": {
       "emailVerificationRequired": true
