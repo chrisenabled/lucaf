@@ -6,10 +6,10 @@
 var config = require('../../server/config.json');
 var path = require('path');
 
-module.exports = function(AdminUser) {
+module.exports = function(Admin) {
   //send verification email after registration
-  AdminUser.afterRemote('create', function(context, user, next) {
-    console.log('> AdminUser.afterRemote triggered');
+  Admin.afterRemote('create', function(context, user, next) {
+    console.log('> Admin.afterRemote triggered');
 
     var options = {
       type: 'email',
@@ -37,12 +37,12 @@ module.exports = function(AdminUser) {
   });
 
   //send password reset link when requested
-  AdminUser.on('resetPasswordRequest', function(info) {
+  Admin.on('resetPasswordRequest', function(info) {
     var url = 'http://' + config.host + ':' + config.port + '/reset-password';
     var html = 'Click <a href="' + url + '?access_token=' +
         info.accessToken.id + '">here</a> to reset your password';
 
-    AdminUser.app.models.Email.send({
+    Admin.app.models.Email.send({
       to: info.email,
       from: info.email,
       subject: 'Password reset',

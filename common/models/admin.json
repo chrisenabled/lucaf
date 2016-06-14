@@ -1,5 +1,5 @@
 {
-  "name": "AdminUser",
+  "name": "Admin",
   "base": "User",
   "idInjection": true,
   "properties": {},
