@@ -15,7 +15,7 @@ module.exports = function (app) {
     var date = new Date(Date.now());
     var options = {
       weekday: "long", year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
-      second: "2-digit"
+      second: "2-digit", timeZone: 'UTC', timeZoneName : "short"
     };
     console.log('Time: ', date.toLocaleTimeString("en-us", options));
     next();
@@ -97,7 +97,6 @@ module.exports = function (app) {
       });
     });
   });
-
   //verified
   app.get('/verified', function(req, res) {
     res.render('verified');
