@@ -10,11 +10,15 @@ module.exports = function(app) {
   var photoController = require('../controllers/photoController')(app);
   var projectController = require('../controllers/projectController')(app);
   var workController = require('../controllers/workController')(app);
+  var memberController =  require('../controllers/memberController')(app);
+  var lucaFGroupController =  require('../controllers/lucafGroupController')(app);
 
   app.use('/', homeController);
   app.use('/admin', adminController);
   app.use('/photo', photoController);
   app.use('/project', projectController);
   app.use('/work', workController);
+  app.use('/member', memberController);
+  app.use('/lucafgroup',lucaFGroupController);
 
 };
