@@ -59,5 +59,13 @@
     "options": {
       "emailVerificationRequired": true
     }
+  },
+  "Member": {
+    "dataSource": "lucafPostgres",
+    "public": true
+  },
+  "LucafGroup": {
+    "dataSource": "lucafPostgres",
+    "public": true
   }
 }
