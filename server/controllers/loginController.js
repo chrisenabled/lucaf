@@ -12,18 +12,12 @@ module.exports = function (app) {
 
   // middleware that is specific to this router
   router.use(function timeLog(req, res, next) {
-    var date = new Date(Date.now());
-    var options = {
-      weekday: "long", year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
-      second: "2-digit", timeZone: 'UTC', timeZoneName : "short"
-    };
-    console.log('Time: ', date.toLocaleTimeString("en-us", options));
     next();
   });
   //login page
   router.get('/', function(req, res) {
     var credentials = dsConfig.emailDs.transports[0].auth;
-    res.render('login', {
+    res.render('login/login', {
       email: credentials.user,
       password: credentials.pass
     });
@@ -35,7 +29,7 @@ module.exports = function (app) {
       password: req.body.password
     }, 'user', function(err, token) {
       if (err) {
-        res.render('response', {
+        res.render('login/response', {
           title: 'Login failed',
           content: err,
           redirectTo: '/',
@@ -44,7 +38,7 @@ module.exports = function (app) {
         return;
       }
 
-      res.render('home', {
+      res.render('home/home', {
         email: req.body.email,
         accessToken: token.id
       });
@@ -53,7 +47,7 @@ module.exports = function (app) {
   //show password reset form
   router.get('/reset-password', function(req, res, next) {
     if (!req.accessToken) return res.sendStatus(401);
-    res.render('password-reset', {
+    res.render('login/password-reset', {
       accessToken: req.accessToken.id
     });
   });
@@ -99,7 +93,7 @@ module.exports = function (app) {
   });
   //verified
   app.get('/verified', function(req, res) {
-    res.render('verified');
+    res.render('login/verified');
   });
 
   return router;
