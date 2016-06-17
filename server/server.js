@@ -11,6 +11,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 // configure body parser
 app.use(bodyParser.urlencoded({extended: true}));
+// configure loopback token to use app model accessToken 
+app.use(loopback.token({model: app.models.accessToken}));
 
 app.start = function() {
   // start the web server
