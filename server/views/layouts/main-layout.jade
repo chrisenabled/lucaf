@@ -1,0 +1,18 @@
+//
+   Created by cahmed on 6/16/16.
+
+doctype html
+
+html
+  head
+    title Lucaf Admin - #{title}
+    block links
+      link(rel='stylesheet', href='/server-assets/bootstrap-css/bootstrap.min.css')
+      link(rel='stylesheet', href='/server-assets/bootstrap-css/bootstrap-theme.min.css')
+    block scripts
+      script(src='/server-assets/jquery/jquery.min.js')
+      script(src='/server-assets/bootstrap-js/bootstrap.min.js')
+  body
+    include ../includes/header
+    block content
+    include ../includes/footer
