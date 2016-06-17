@@ -7,7 +7,7 @@ var express = require('express');
 var router = express.Router();
 
 module.exports = function (app) {
-
+  var User = app.models.Admin;
   // middleware that is specific to this router
   router.use(function timeLog(req, res, next) {
     next();
