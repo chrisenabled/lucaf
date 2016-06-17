@@ -1,12 +1,7 @@
-//
-   Created by chrisenabled on 6/11/16.
-html
-  head
-    link(rel='stylesheet', href='/server-assets/bootstrap-css/bootstrap.min.css')
-    link(rel='stylesheet', href='/server-assets/bootstrap-css/bootstrap-theme.min.css')
-    script(src='/server-assets/jquery/jquery.min.js')
-    script(src='/server-assets/bootstrap-js/bootstrap.min.js')
-  body
+//Created by chrisenabled on 6/11/16.
+extends ../layouts/one-column-layout
+
+append primary
     section
       form(action='/login', method='post')
         fieldset
@@ -20,7 +15,7 @@ html
           div
             input(type='submit', value='Login')
     section
-      form(action='/api/adminUsers', method='post')
+      form(action='/api/admins', method='post')
         fieldset
           legend Sign up form
           div
