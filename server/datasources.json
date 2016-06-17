@@ -22,7 +22,7 @@
         "type": "smtp",
         "host": "smtp.gmail.com",
         "secure": true,
-        "port": 587,
+        "port": 465,
         "tls": {
           "rejectUnauthorized": false
         },

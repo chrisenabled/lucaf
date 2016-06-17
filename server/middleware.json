@@ -3,6 +3,7 @@
     "loopback#favicon": {}
   },
   "initial": {
+    "./middleware/requestLog": {},
     "compression": {},
     "cors": {
       "params": {
@@ -40,7 +41,29 @@
       ]
     }
   },
-  "files": {},
+  "files": {
+    "loopback#static": [
+      {
+        "name": "client-files",
+        "params": "$!../client"
+      },
+      {
+        "name": "server-bootstrap-js",
+        "paths": ["/server-assets/bootstrap-js"],
+        "params": "$!../node_modules/bootstrap/dist/js"
+      },
+      {
+        "name": "server-bootstrap-css",
+        "paths": ["/server-assets/bootstrap-css"],
+        "params":  "$!../node_modules/bootstrap/dist/css"
+      },
+      {
+        "name": "server-jquery",
+        "paths": ["/server-assets/jquery"],
+        "params":  "$!../node_modules/jquery/dist"
+      }
+    ]
+  },
   "final": {
     "loopback#urlNotFound": {}
   },

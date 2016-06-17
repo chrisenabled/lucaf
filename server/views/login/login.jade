@@ -1,7 +1,7 @@
-//
-   Created by chrisenabled on 6/11/16.
-html
-  body
+//Created by chrisenabled on 6/11/16.
+extends ../layouts/one-column-layout
+
+append primary
     section
       form(action='/login', method='post')
         fieldset
@@ -15,7 +15,7 @@ html
           div
             input(type='submit', value='Login')
     section
-      form(action='/api/users', method='post')
+      form(action='/api/admins', method='post')
         fieldset
           legend Sign up form
           div

@@ -4,7 +4,8 @@
 
 var server = require('../server');
 var ds = server.dataSources.lucafPostgres;
-var lbTables = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role', 'AdminUser', 'Photo', 'Project', 'Work'];
+var lbTables = ['User', 'AccessToken', 'ACL', 'RoleMapping', 'Role', 'Admin', 'Photo', 'Project', 'Work',
+                  'LucafGroup', 'Member'];
 
 // create database tables for models if they do not exist or update any property changes.
 ds.autoupdate(lbTables, function(er) {

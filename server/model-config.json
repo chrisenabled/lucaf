@@ -53,11 +53,19 @@
   "Email": {
     "dataSource": "emailDs"
   },
-  "AdminUser": {
+  "Admin": {
     "dataSource": "lucafPostgres",
     "public": true,
     "options": {
       "emailVerificationRequired": true
     }
+  },
+  "Member": {
+    "dataSource": "lucafPostgres",
+    "public": true
+  },
+  "LucafGroup": {
+    "dataSource": "lucafPostgres",
+    "public": true
   }
 }
