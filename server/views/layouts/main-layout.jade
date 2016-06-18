@@ -9,10 +9,12 @@ html
     block links
       link(rel='stylesheet', href='/server-assets/bootstrap-css/bootstrap.min.css')
       link(rel='stylesheet', href='/server-assets/bootstrap-css/bootstrap-theme.min.css')
+      link(rel='stylesheet', href='/server-assets/css/admin-css.css')
     block scripts
       script(src='/server-assets/jquery/jquery.min.js')
       script(src='/server-assets/bootstrap-js/bootstrap.min.js')
   body
-    include ../includes/header
-    block content
-    include ../includes/footer
+    .container-fluid
+      include ../includes/header
+      block content
+      include ../includes/footer

@@ -1,38 +1,40 @@
 //Created by chrisenabled on 6/11/16.
 extends ../layouts/one-column-layout
 
-append primary
-    section
-      form(action='/login', method='post')
-        fieldset
-          legend Login form
-          div
-            label Email:
-            input(type='text', name='email', value=email)
-          div
-            label Password:
-            input(type='password', name='password', value=password)
-          div
-            input(type='submit', value='Login')
-    section
-      form(action='/api/admins', method='post')
-        fieldset
-          legend Sign up form
-          div
-            label Email:
-            input(type='text', name='email', value=email)
-          div
-            label Password:
-            input(type='password', name='password', value=password)
-          div
-            input(type='submit', value='Sign up')
-    section
-      form(action='/request-password-reset', method='post')
-        fieldset
-          legend Reset password form
-          div
-            label Email:
-            input(type='text', name='email', value=email)
-          div
-            input(type='submit', value='Reset password')
+append scripts
+  script(type='text/javascript').
+     $(document).ready(function () {
+        $('.message a').click(function () {
+          $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+      });
+
+append content
+  .row
+    .login-page
+      .form
+        form.register-form(action='/api/admins', method='post')
+          input(type='text', placeholder='email address')
+          input(type='password', placeholder='password')
+          input(type='password', placeholder='re-type password')
+          input(type='submit', value='Sign up')
+          p.message
+            | Already registered?
+            a(href='#') Sign In
+        form.login-form
+          input(type='text', placeholder='username or email', name='email', value=email)
+          input(type='password', placeholder='password', name='password', value=password)
+          input(type='submit', value='Login')
+          p.message
+            | Not registered?
+            a(href='#') Create an account
+    //section
+    //  form(action='/request-password-reset', method='post')
+    //    fieldset
+    //      legend Reset password form
+    //      div
+    //        label Email:
+    //        input(type='text', name='email', value=email)
+    //      div
+    //        input(type='submit', value='Reset password')
 

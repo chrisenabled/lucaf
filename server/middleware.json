@@ -61,6 +61,11 @@
         "name": "server-jquery",
         "paths": ["/server-assets/jquery"],
         "params":  "$!../node_modules/jquery/dist"
+      },
+      {
+        "name": "server-assets-css",
+        "paths": ["/server-assets/css"],
+        "params":  "$!../server/assets/css"
       }
     ]
   },
