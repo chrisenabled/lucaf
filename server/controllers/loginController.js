@@ -58,7 +58,7 @@ module.exports = function (app) {
     }, function(err) {
       if (err) return res.status(401).send(err);
 
-      res.render('response', {
+      res.render('login/response', {
         title: 'Password reset requested',
         content: 'Check your email for further instructions',
         redirectTo: '/',
@@ -66,7 +66,7 @@ module.exports = function (app) {
       });
     });
   });
-  //reset the user's pasword
+  //reset the user's password
   router.post('/reset-password', function(req, res, next) {
     if (!req.accessToken) return res.sendStatus(401);
 
@@ -82,7 +82,7 @@ module.exports = function (app) {
       user.updateAttribute('password', req.body.password, function(err, user) {
         if (err) return res.sendStatus(404);
         console.log('> password reset processed successfully');
-        res.render('response', {
+        res.render('login/response', {
           title: 'Password reset success',
           content: 'Your password has been reset successfully',
           redirectTo: '/',
