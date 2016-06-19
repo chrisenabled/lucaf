@@ -1,0 +1,16 @@
+
+.login-page {
+  background-color: #0d3349;
+  height: auto;
+}
+.form {
+  text-align: center;
+}
+
+.form .hide-form {
+  display: none;
+}
+
+.vcenter {
+  display:block; width:100%; height:95vh !important; align-items: center;
+}

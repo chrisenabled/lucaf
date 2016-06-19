@@ -66,6 +66,11 @@
         "name": "server-assets-css",
         "paths": ["/server-assets/css"],
         "params":  "$!../server/assets/css"
+      },
+      {
+        "name": "server-assets-js",
+        "paths": ["/server-assets/js"],
+        "params":  "$!../server/assets/js"
       }
     ]
   },

@@ -22,6 +22,14 @@ module.exports = function (app) {
       password: credentials.pass
     });
   });
+  // register user
+  router.get('/register', function(req, res) {
+    res.render('login/registration-form', {});
+  });
+  // forgot password
+  router.get('/forgot-password', function(req, res) {
+    res.render('login/forgot-password-form', {});
+  });
   //log a user in
   router.post('/login', function(req, res) {
     User.login({

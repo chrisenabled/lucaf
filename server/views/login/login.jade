@@ -1,40 +1,50 @@
 //Created by chrisenabled on 6/11/16.
 extends ../layouts/one-column-layout
 
+append links
+  link(rel='stylesheet', href='/server-assets/css/login.css')
+
 append scripts
-  script(type='text/javascript').
-     $(document).ready(function () {
-        $('.message a').click(function () {
-          $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-        });
-      });
+  script(src='/server-assets/js/login.js')
 
 append content
   .row
-    .login-page
-      .form
-        form.register-form(action='/api/admins', method='post')
-          input(type='text', placeholder='email address')
-          input(type='password', placeholder='password')
-          input(type='password', placeholder='re-type password')
-          input(type='submit', value='Sign up')
-          p.message
-            | Already registered?
-            a(href='#') Sign In
-        form.login-form
-          input(type='text', placeholder='username or email', name='email', value=email)
-          input(type='password', placeholder='password', name='password', value=password)
-          input(type='submit', value='Login')
-          p.message
-            | Not registered?
-            a(href='#') Create an account
-    //section
-    //  form(action='/request-password-reset', method='post')
-    //    fieldset
-    //      legend Reset password form
-    //      div
-    //        label Email:
-    //        input(type='text', name='email', value=email)
-    //      div
-    //        input(type='submit', value='Reset password')
+    .col-md-offset-4.col-md-4
+      .login-page
+        p.form-title LOGIN
+        #form-wrapper.form
+          form.register.hide-form(action='/api/admins', method='post')
+            label(for="register-email" class="sr-only") Email
+            input#register-email(type='text', placeholder='email address')
+            label(for="register-password" class="sr-only") Password
+            input#register-password(type='password', placeholder='password')
+            label(for="register-re-password" class="sr-only") Confirm Password
+            input#register-re-password(type='password', placeholder='confirm password')
+            input#register-submit(type='submit', value='Register')
+            p.message
+              | Already registered? &nbsp;
+              a(href='/', rel="login", class="linkform") Sign In
+
+          form.login(action='/login', method='post' class="active")
+            label(for="login-email" class="sr-only") Email
+            input#login-email(type='email', placeholder='username or email', name='email')
+            label(for="login-password" class="sr-only") Password
+            input#login-password(type='password', placeholder='password', name='password')
+            input#login-submit(type='submit', value='Login')
+            p.message
+              | Not registered? &nbsp;
+              a(href='/register', rel="register", class="linkform") Create an account
+            p.message
+              a(href='/forgot-password', rel="forgot-password", class="linkform") forgot password?
+
+          form.forgot-password.hide-form(action='/request-password-reset', method='post')
+            input#forgot-email(type='text', placeholder='email address', name='email')
+            input#forgot-submit(type='submit', value='Reset password')
+            p.message
+              | Not registered? &nbsp;
+              a(href='/register', rel="register", class="linkform") Create an account
+            p.message
+              | Remember password? &nbsp;
+              a(href='/', rel="login", class="linkform") Sign in
+
 

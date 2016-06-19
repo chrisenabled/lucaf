@@ -1,0 +1,23 @@
+//Created by chrisenabled on 6/18/16.
+extends ../layouts/one-column-layout
+
+append links
+  link(rel='stylesheet', href='/server-assets/css/login.css')
+
+append content
+  .row
+    .col-md-offset-4.col-md-4
+      .login-page
+        p.form-title REGISTER
+        #form-wrapper.form
+          form.register(action='/api/admins', method='post', class='active')
+            label(for="register-email" class="sr-only") Email
+            input#register-email(type='text', placeholder='email address')
+            label(for="register-password" class="sr-only") Password
+            input#register-password(type='password', placeholder='password')
+            label(for="register-re-password" class="sr-only") Confirm Password
+            input#register-re-password(type='password', placeholder='confirm password')
+            input#register-submit(type='submit', value='Register')
+            p.message
+              | Already registered? &nbsp;
+              a(href='/', rel="login", class="linkform") Sign In
