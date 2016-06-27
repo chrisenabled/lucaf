@@ -15,9 +15,9 @@ append content
         #form-wrapper.form
           form.register.hide-form(action='/api/admins', method='post')
             label(for="register-email" class="sr-only") Email
-            input#register-email(type='text', placeholder='email address')
+            input#register-email(type='text', placeholder='email address', name='email')
             label(for="register-password" class="sr-only") Password
-            input#register-password(type='password', placeholder='password')
+            input#register-password(type='password', placeholder='password', name='password', autocomplete='new-password')
             label(for="register-re-password" class="sr-only") Confirm Password
             input#register-re-password(type='password', placeholder='confirm password')
             input#register-submit(type='submit', value='Register')
@@ -29,7 +29,7 @@ append content
             label(for="login-email" class="sr-only") Email
             input#login-email(type='email', placeholder='username or email', name='email')
             label(for="login-password" class="sr-only") Password
-            input#login-password(type='password', placeholder='password', name='password')
+            input#login-password(type='password', placeholder='password', name='password', autocomplete='new-password')
             input#login-submit(type='submit', value='Login')
             p.message
               | Not registered? &nbsp;
