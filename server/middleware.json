@@ -1,6 +1,8 @@
 {
   "initial:before": {
-    "loopback#favicon": {}
+    "loopback#favicon": {
+      "params": "$!../common/assets/images/liftupcare.ico"
+    }
   },
   "initial": {
     "./middleware/requestLog": {},
@@ -71,6 +73,11 @@
         "name": "server-assets-js",
         "paths": ["/server-assets/js"],
         "params":  "$!../server/assets/js"
+      },
+      {
+        "name": "common-assets",
+        "paths": ["/common-assets"],
+        "params":  "$!../common/assets"
       }
     ]
   },
