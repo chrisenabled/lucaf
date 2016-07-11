@@ -17,6 +17,7 @@ module.exports = function (app) {
   //login page
   router.get('/', function(req, res) {
     var credentials = dsConfig.emailDs.transports[0].auth;
+    res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0, max-age=0');
     res.render('login/login', {
       email: credentials.user,
       password: credentials.pass
